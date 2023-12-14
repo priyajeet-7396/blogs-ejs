@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<form method="post" action="/edit">
+    <label for="exampleInputEmail1">Enter title of blog you want to edit</label>
+    <input type="text" id="exampleInputEmail1" name="search" aria-describedby="emailHelp">
+    <button type="submit">Submit</button>
+</form>
+
+<% if (typeof Search !== 'undefined' && Search.length > 0) { %>
+    <% for (var i = 0; i < blogs.length; i++) { %>
+        <% if (blogs[i].title === Search) { %>
+            <h1><%= blogs[i].title %> </h1> 
+            <p><%= blogs[i].content %> </p>
+            <form method="post" action="/edit">
+                <label for="newContent">New Content:</label>
+                <textarea id="newContent" name="newContent" rows="4" cols="50"></textarea>
+                <button type="submit">Update Content</button>
+            </form>  
+            <% blogs[i].content = newContent %> 
+        <% } %>
+     
+
+    <% } %>
+<% } else { %>
+    <p>No search query entered.</p>
+    <!-- Additional content or instructions if no search query is entered -->
+<% } %>
+
+<%- include("partials/footer.ejs") %>

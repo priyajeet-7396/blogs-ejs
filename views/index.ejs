@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+
+  <% if (blogs.length > 0) { %>
+    <% for(var i = 0; i < blogs.length; i++) { %>
+        <h1><%= blogs[i].title %> </h1>
+        <p> <%= blogs[i].content %> </p>
+    <% } %>
+    <% } else { %>
+    <h1>No blogs available</h1>
+    <p>Start by adding some blogs using the "Add your blog" link.</p>
+    <% } %>
+
+
+<%- include("partials/footer.ejs") %>

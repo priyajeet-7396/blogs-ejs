@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<form method="post" action="/add">
+      <label for="exampleInputEmail1" >Enter title of blog</label>
+      <input type="text" id="exampleInputEmail1" name="title" aria-describedby="emailHelp">
+      <label for="exampleInputPassword1">Write about the blog</label>
+      <input type="text"  id="exampleInputPassword1" name="content">
+    <button type="submit">Submit</button>
+  </form>
+  
+
+<%- include("partials/footer.ejs") %>
